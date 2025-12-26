@@ -992,11 +992,11 @@ const fixPath = (path) => {
   /* Modal Specific Styles */
   .modal-intro {
     background: var(--surface-hover);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--glass-border);
-    margin-bottom: 2.5rem;
-    max-width: 100%;
+    margin-bottom: 2rem;
+    width: 100%;
     box-shadow: var(--card-shadow);
   }
 
@@ -1633,10 +1633,12 @@ const fixPath = (path) => {
   }
 
   .seminar-list-content {
-    padding: 3rem;
-    overflow: auto !important; /* Fixed: Enable all scrolling on mobile touch */
+    padding: 2.5rem;
+    overflow: auto !important;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
   }
 
   .seminars-grid-full {
