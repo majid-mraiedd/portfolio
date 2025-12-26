@@ -11,7 +11,7 @@ const iconMap = {
   whatsapp: MessageCircle
 };
 
-const { personal, hero, skills, seminars, education, builds, linkedin_posts, focus, deployment_note } = content;
+const { personal, hero, skills, seminars, builds, linkedin_posts, focus, deployment_note } = content;
 
 const fixPath = (path) => {
   if (path.startsWith('http')) return path;
@@ -294,26 +294,7 @@ const fixPath = (path) => {
       </div>
     </div>
 
-    <!-- Education Section -->
-    <section class="section container">
-      <div class="section-header animate-fade-in delay-2">
-        <h2>Education</h2>
-        <p>My academic foundation and continuous learning journey.</p>
-      </div>
-      
-      <div class="education-grid animate-fade-in delay-3">
-        {education.map((edu) => (
-          <div class="edu-card glass">
-            <div class="edu-info">
-              <h3>{edu.institution}</h3>
-              <p class="degree">{edu.degree}</p>
-              <p class="period">{edu.period}</p>
-            </div>
-            <p class="edu-desc">{edu.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+
 
 
 

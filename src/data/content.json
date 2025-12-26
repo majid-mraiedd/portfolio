@@ -16,11 +16,6 @@
                 "name": "GitHub",
                 "url": "https://github.com/majid-mraiedd",
                 "icon": "github"
-            },
-            {
-                "name": "WhatsApp",
-                "url": "https://wa.me/218915177136",
-                "icon": "whatsapp"
             }
         ]
     },
@@ -58,20 +53,6 @@
                 "Volunteering",
                 "Microsoft Office"
             ]
-        }
-    ],
-    "education": [
-        {
-            "institution": "Saraya Hamra University",
-            "degree": "Computer Engineering",
-            "period": "Current",
-            "description": "Focusing on hardware-software integration, AI, and system architecture."
-        },
-        {
-            "institution": "International Knowledge School (IKS)",
-            "degree": "High School Diploma",
-            "period": "Graduated",
-            "description": "Foundation in science and mathematics."
         }
     ],
     "builds": [
