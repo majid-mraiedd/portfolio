@@ -184,16 +184,8 @@ const fixPath = (path) => {
     <!-- Builds Section -->
     <section id="builds" class="section container">
       <div class="section-header animate-fade-in delay-2">
-        <div class="header-with-action">
-          <div>
-            <h2>Selected Builds</h2>
-            <p>A showcase of my recent technical projects.</p>
-          </div>
-          <button id="open-deployment-help" class="help-trigger glass" aria-label="Project Access Help">
-            <Info size={18} />
-            <span>{deployment_note.button_text}</span>
-          </button>
-        </div>
+        <h2>Selected Builds</h2>
+        <p>A showcase of my recent technical projects.</p>
       </div>
       
       <div class="builds-grid animate-fade-in delay-3">
@@ -315,7 +307,23 @@ const fixPath = (path) => {
       </div>
     </section>
 
-
+    <!-- About Section -->
+    <section class="section container">
+      <div class="about-card-wrapper animate-fade-in delay-2">
+        <div class="about-card glass">
+          <div class="about-glow"></div>
+          <div class="about-header">
+            <div class="about-icon">
+              <Brain size={32} />
+            </div>
+            <h2>Behind the Code</h2>
+          </div>
+          <div class="about-body">
+            <p>{personal.bio}</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -349,53 +357,12 @@ const fixPath = (path) => {
       </div>
     </div>
 
-  </main>
 
-    <!-- Deployment Help Modal -->
-    <div id="deployment-modal" class="modal-overlay">
-      <div class="modal-container glass help-modal-container">
-        <div class="modal-header-bar">
-          <div class="modal-title">
-            <Info size={18} />
-            <span>Project Access Guide</span>
-          </div>
-          <button id="close-deployment-help" class="modal-close-tab">
-            <X size={20} />
-            <span>Close</span>
-          </button>
-        </div>
-        <div class="modal-content help-modal-body">
-          <div class="help-layout">
-            <div class="help-text">
-              <h2>{deployment_note.title}</h2>
-              <p>{deployment_note.description}</p>
-              <div class="warning-box">
-                <AlertCircle size={24} />
-                <p>{deployment_note.warning_text}</p>
-              </div>
-            </div>
-            <div class="help-visual">
-              <div class="screenshot-box glass">
-                <img src={fixPath(deployment_note.image)} alt="Deployment Status Screenshot" class="help-screenshot" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </main>
 </Layout>
 
 <!-- Updated: 2025-12-26 -->
 <script>
-  // Force scroll to top on refresh
-  if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-  } else {
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    }
-  }
-  
   // UI Helper for Modals
   function setupModal(modalId, openBtnId, closeBtnId) {
     const modal = document.getElementById(modalId);
@@ -406,9 +373,6 @@ const fixPath = (path) => {
 
     openBtn?.addEventListener('click', () => {
       scrollPos = window.pageYOffset;
-      const modalContent = modal?.querySelector('.modal-content');
-      if (modalContent) modalContent.scrollTop = 0; // Reset scroll position
-      
       modal?.classList.add('active');
       body.style.top = `-${scrollPos}px`;
       body.classList.add('modal-open');
@@ -434,7 +398,6 @@ const fixPath = (path) => {
   // Init Modals
   setupModal('cv-modal', 'open-cv', 'close-cv');
   setupModal('seminar-modal', 'open-seminars', 'close-seminars');
-  setupModal('deployment-modal', 'open-deployment-help', 'close-deployment-help');
 
   // LinkedIn "Story" Mode Slideshow
   const track = document.getElementById('posts-track');
@@ -1045,11 +1008,11 @@ const fixPath = (path) => {
   /* Modal Specific Styles */
   .modal-intro {
     background: var(--surface-hover);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--glass-border);
-    margin-bottom: 2rem;
-    width: 100%;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
     box-shadow: var(--card-shadow);
   }
 
@@ -1205,14 +1168,13 @@ const fixPath = (path) => {
     width: 100%;
     background: #1a1a1a;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     position: relative;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     display: flex;
-    flex-direction: column; /* Ensure stacked content */
-    align-items: flex-start; /* Start from top-left */
-    justify-content: flex-start; /* Start from top */
+    align-items: center;
+    justify-content: center;
   }
 
   .cv-viewer-frame {
@@ -1220,6 +1182,7 @@ const fixPath = (path) => {
     height: 100%;
     border: none;
     display: block;
+    object-fit: contain; /* Ensure PDF scales properly */
   }
 
   /* Skills Grid Redesign */
@@ -1686,12 +1649,10 @@ const fixPath = (path) => {
   }
 
   .seminar-list-content {
-    padding: 2.5rem;
-    overflow: auto !important;
+    padding: 3rem;
+    overflow: auto !important; /* Fixed: Enable all scrolling on mobile touch */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    display: flex;
-    flex-direction: column;
   }
 
   .seminars-grid-full {
@@ -2237,19 +2198,9 @@ const fixPath = (path) => {
     .modal-content {
       padding: 1.5rem !important; /* Safety gutter for all text */
     }
-    /* CV gets special treatment for mobile */
+    /* CV gets special edge-to-edge content BUT header handles the frame */
     #cv-modal .modal-content {
-      padding: 1rem !important; /* Small padding around PDF */
-      overflow-y: auto;
-      overflow-x: hidden;
-      align-items: center; /* Center CV vertically if small */
-      justify-content: center;
-    }
-    #cv-modal .cv-viewer-frame {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      min-height: 100%;
+      padding: 0 !important;
     }
     .seminar-list-content {
       padding: 2rem 1.5rem !important; 
