@@ -335,7 +335,7 @@ const fixPath = (path) => {
 
 
 
-    <footer class="container">
+    <footer class="container footer-content">
       <p>&copy; {new Date().getFullYear()} {personal.name}. All rights reserved.</p>
     </footer>
 
@@ -347,10 +347,16 @@ const fixPath = (path) => {
             <FileText size={18} />
             <span>Curriculum Vitae</span>
           </div>
-          <button id="close-cv" class="modal-close-tab">
-            <X size={20} />
-            <span>Close</span>
-          </button>
+          <div class="modal-header-actions">
+            <a href={fixPath(personal.cv)} download={`${personal.name}_CV.pdf`} class="download-btn">
+              <Download size={18} />
+              <span>Download PDF</span>
+            </a>
+            <button id="close-cv" class="modal-close-tab">
+              <X size={20} />
+              <span>Close</span>
+            </button>
+          </div>
         </div>
         <div class="modal-content">
           <!-- CV Content / PDF Viewer -->
@@ -1124,6 +1130,34 @@ const fixPath = (path) => {
     color: var(--text-main);
   }
 
+  .modal-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .download-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-glow);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .download-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+  }
+
   .modal-close-tab {
     display: flex;
     align-items: center;
@@ -1142,6 +1176,12 @@ const fixPath = (path) => {
   .modal-close-tab:hover {
     background: #ef4444;
     color: white;
+  }
+
+  /* Body Lock when Modal Open */
+  body.modal-open {
+    overflow: hidden !important;
+    height: 100vh;
   }
 
   .modal-content {
@@ -2092,6 +2132,33 @@ const fixPath = (path) => {
     gap: 1rem;
   }
 
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--primary-glow);
+    transition: all 0.3s;
+  }
+
+  .footer-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--primary-glow);
+  }
+
   @media (max-width: 768px) {
     .update-card-single {
       max-height: none;
@@ -2101,6 +2168,11 @@ const fixPath = (path) => {
     }
     .card-content-area {
       padding: 1.5rem;
+    }
+    .footer-content {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
     }
     .about-card {
       padding: 2.5rem 1.5rem;
