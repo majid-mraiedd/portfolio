@@ -357,6 +357,9 @@ const fixPath = (path) => {
 
     openBtn?.addEventListener('click', () => {
       scrollPos = window.pageYOffset;
+      const modalContent = modal?.querySelector('.modal-content');
+      if (modalContent) modalContent.scrollTop = 0; // Reset scroll position
+      
       modal?.classList.add('active');
       body.style.top = `-${scrollPos}px`;
       body.classList.add('modal-open');
