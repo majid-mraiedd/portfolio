@@ -407,15 +407,20 @@ const fixPath = (path) => {
     const openBtn = document.getElementById(openBtnId);
     const closeBtn = document.getElementById(closeBtnId);
     const body = document.body;
+    let scrollPos = 0;
 
     openBtn?.addEventListener('click', () => {
+      scrollPos = window.pageYOffset;
       modal?.classList.add('active');
+      body.style.top = `-${scrollPos}px`;
       body.classList.add('modal-open');
     });
 
     const closeModal = () => {
       modal?.classList.remove('active');
       body.classList.remove('modal-open');
+      body.style.top = '';
+      window.scrollTo(0, scrollPos);
     };
 
     closeBtn?.addEventListener('click', (e) => {
@@ -1104,12 +1109,16 @@ const fixPath = (path) => {
     border-radius: var(--radius-lg);
     position: relative;
     overflow: hidden;
-    transform: scale(0.9);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
+    display: flex;
+    flex-direction: column;
   }
 
   .modal-overlay.active .modal-container {
-    transform: scale(1);
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .modal-header-bar {
@@ -1181,27 +1190,32 @@ const fixPath = (path) => {
     color: white;
   }
 
-  /* Body Lock when Modal Open - Stronger version for Mobile */
+  /* Body Lock when Modal Open - Ultimate Fixed Lock for iOS/Safari */
   body.modal-open {
     overflow: hidden !important;
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 
   .modal-content {
+    flex: 1; /* Key for internal scrolling */
     width: 100%;
-    height: calc(100% - 45px); /* Height minus header bar */
     background: #1a1a1a;
-    overflow: auto; /* Allow both vertical and horizontal scroll for CV */
+    overflow: auto;
+    position: relative;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
 
   .cv-viewer-frame {
     width: 100%;
+    min-height: 100%; /* Force fill */
     height: 100%;
     border: none;
+    display: block;
   }
 
   /* Skills Grid Redesign */
@@ -2200,16 +2214,31 @@ const fixPath = (path) => {
       font-size: 2rem;
     }
     .modal-content {
-      padding: 1.5rem; /* Increased gutter for better text breathing room */
+      padding: 0 !important; /* CV needs full edge-to-edge for zooming */
     }
     .seminar-list-content {
-      padding: 1.5rem; 
+      padding: 1.5rem 1rem; 
     }
     .modal-container {
-      width: 100% !important;
-      height: 100% !important;
+      width: 100vw !important;
+      height: 100dvh !important; /* Dynamic viewport height for mobile browsers */
       border-radius: 0;
       max-height: none;
+      transform: translateY(100%); /* Slide up transition for mobile */
+    }
+    .modal-overlay.active .modal-container {
+      transform: translateY(0);
+    }
+    .modal-header-bar {
+      padding: 0.75rem 1rem;
+      height: 60px; /* Standardize header height */
+    }
+    .modal-title span {
+      display: none; /* Hide text on narrow screens to save space */
+    }
+    .modal-header-actions {
+      width: 100%;
+      justify-content: space-between;
     }
     .builds-grid {
       grid-template-columns: 1fr;
