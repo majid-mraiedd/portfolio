@@ -1155,13 +1155,14 @@ const fixPath = (path) => {
     width: 100%;
     background: #1a1a1a;
     overflow-y: auto;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
     position: relative;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Ensure stacked content */
+    align-items: flex-start; /* Start from top-left */
+    justify-content: flex-start; /* Start from top */
   }
 
   .cv-viewer-frame {
@@ -2191,6 +2192,8 @@ const fixPath = (path) => {
       padding: 1rem !important; /* Small padding around PDF */
       overflow-y: auto;
       overflow-x: hidden;
+      align-items: center; /* Center CV vertically if small */
+      justify-content: center;
     }
     #cv-modal .cv-viewer-frame {
       width: 100%;
