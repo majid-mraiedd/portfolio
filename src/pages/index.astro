@@ -1203,21 +1203,25 @@ const fixPath = (path) => {
   }
 
   .modal-content {
-    flex: 1; /* Key for internal scrolling */
+    flex: 1;
     width: 100%;
     background: #1a1a1a;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     position: relative;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .cv-viewer-frame {
     width: 100%;
-    min-height: 100%; /* Force fill */
     height: 100%;
     border: none;
     display: block;
+    object-fit: contain; /* Ensure PDF scales properly */
   }
 
   /* Skills Grid Redesign */
@@ -1580,7 +1584,7 @@ const fixPath = (path) => {
   }
 
   .help-modal-container {
-    max-width: 1200px; /* Expanded for better visibility */
+    max-width: 1400px; /* Wider for better text flow */
     height: auto !important;
     max-height: 90vh;
   }
@@ -1605,10 +1609,11 @@ const fixPath = (path) => {
   }
 
   .help-text p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-main); /* Deep contrast */
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-main);
     margin-bottom: 2rem;
+    max-width: 600px; /* Prevent overly long lines */
   }
 
   .warning-box {
@@ -1624,7 +1629,11 @@ const fixPath = (path) => {
   :root[data-theme="light"] .warning-box {
     background: #fffbef;
     border-color: #fde68a;
-    color: #92400e; 
+    color: #92400e;
+  }
+
+  :root[data-theme="light"] .warning-box p {
+    color: #92400e !important; /* Ensure text is visible in light mode */
   }
 
   .warning-box p {
@@ -1687,8 +1696,9 @@ const fixPath = (path) => {
 
   .seminars-grid-full {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    width: 100%;
   }
 
   .seminar-card-full {
