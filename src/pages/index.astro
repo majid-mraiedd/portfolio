@@ -1193,7 +1193,7 @@ const fixPath = (path) => {
     width: 100%;
     height: calc(100% - 45px); /* Height minus header bar */
     background: #1a1a1a;
-    overflow-y: auto;
+    overflow: auto; /* Allow both vertical and horizontal scroll for CV */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
@@ -1661,7 +1661,7 @@ const fixPath = (path) => {
 
   .seminar-list-content {
     padding: 3rem;
-    overflow-y: auto !important;
+    overflow: auto !important; /* Fixed: Enable all scrolling on mobile touch */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
@@ -2195,9 +2195,17 @@ const fixPath = (path) => {
     .about-card h2 {
       font-size: 2rem;
     }
-    .about-body p {
-      font-size: 1.1rem;
-      text-align: center;
+    .modal-content {
+      padding: 0; /* Maximize viewer space on mobile */
+    }
+    .seminar-list-content {
+      padding: 1.5rem; /* Better padding for touch on small screens */
+    }
+    .modal-container {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 0;
+      max-height: none;
     }
   }
 </style>
