@@ -5,6 +5,8 @@ interface Props {
 
 const { title } = Astro.props;
 
+import '../styles/global.css';
+
 const fixPath = (path) => {
   if (path.startsWith('http')) return path;
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -19,7 +21,6 @@ const fixPath = (path) => {
 		<meta name="description" content="Portfolio" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={fixPath('/favicon.svg')} />
-    <link rel="stylesheet" href={fixPath('/styles/global.css')} />
 		<meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
