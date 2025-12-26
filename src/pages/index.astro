@@ -1166,7 +1166,6 @@ const fixPath = (path) => {
     height: 100%;
     border: none;
     display: block;
-    object-fit: contain; /* Ensure PDF scales properly */
   }
 
   /* Skills Grid Redesign */
@@ -2184,9 +2183,17 @@ const fixPath = (path) => {
     .modal-content {
       padding: 1.5rem !important; /* Safety gutter for all text */
     }
-    /* CV gets special edge-to-edge content BUT header handles the frame */
+    /* CV gets special treatment for mobile */
     #cv-modal .modal-content {
-      padding: 0 !important;
+      padding: 1rem !important; /* Small padding around PDF */
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    #cv-modal .cv-viewer-frame {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: 100%;
     }
     .seminar-list-content {
       padding: 2rem 1.5rem !important; 
