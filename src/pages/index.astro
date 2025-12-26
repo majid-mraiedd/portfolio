@@ -184,16 +184,8 @@ const fixPath = (path) => {
     <!-- Builds Section -->
     <section id="builds" class="section container">
       <div class="section-header animate-fade-in delay-2">
-        <div class="header-with-action">
-          <div>
-            <h2>Selected Builds</h2>
-            <p>A showcase of my recent technical projects.</p>
-          </div>
-          <button id="open-deployment-help" class="help-trigger glass" aria-label="Project Access Help">
-            <Info size={18} />
-            <span>{deployment_note.button_text}</span>
-          </button>
-        </div>
+        <h2>Selected Builds</h2>
+        <p>A showcase of my recent technical projects.</p>
       </div>
       
       <div class="builds-grid animate-fade-in delay-3">
@@ -365,38 +357,7 @@ const fixPath = (path) => {
       </div>
     </div>
 
-    <!-- Deployment Help Modal -->
-    <div id="deployment-modal" class="modal-overlay">
-      <div class="modal-container glass help-modal-container">
-        <div class="modal-header-bar">
-          <div class="modal-title">
-            <Info size={18} />
-            <span>Project Access Guide</span>
-          </div>
-          <button id="close-deployment-help" class="modal-close-tab">
-            <X size={20} />
-            <span>Close</span>
-          </button>
-        </div>
-        <div class="modal-content help-modal-body">
-          <div class="help-layout">
-            <div class="help-text">
-              <h2>{deployment_note.title}</h2>
-              <p>{deployment_note.description}</p>
-              <div class="warning-box">
-                <AlertCircle size={24} />
-                <p>{deployment_note.warning_text}</p>
-              </div>
-            </div>
-            <div class="help-visual">
-              <div class="screenshot-box glass">
-                <img src={fixPath(deployment_note.image)} alt="Deployment Status Screenshot" class="help-screenshot" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </main>
 </Layout>
 
@@ -436,7 +397,6 @@ const fixPath = (path) => {
   // Init Modals
   setupModal('cv-modal', 'open-cv', 'close-cv');
   setupModal('seminar-modal', 'open-seminars', 'close-seminars');
-  setupModal('deployment-modal', 'open-deployment-help', 'close-deployment-help');
 
   // LinkedIn "Story" Mode Slideshow
   const track = document.getElementById('posts-track');
@@ -2270,6 +2230,16 @@ const fixPath = (path) => {
     .builds-grid {
       grid-template-columns: 1fr;
       gap: 1.75rem;
+    }
+    .modal-intro {
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .modal-intro h2 {
+      font-size: 1.5rem;
+    }
+    .modal-intro p {
+      font-size: 0.95rem;
     }
   }
 </style>
