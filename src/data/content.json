@@ -1,0 +1,211 @@
+{
+    "personal": {
+        "name": "Abdulmajid Mraied",
+        "role": "AI & Systems Engineer",
+        "avatar": "/images/pfp.jpg",
+        "bio": "I operate at the intersection of the physical and digital worlds. With a foundation in Computer Engineering, I design the hardware and circuitry that powers modern computing. My expertise extends through the Software Engineering stack, allowing me to build robust infrastructures that support my primary focus: Artificial Intelligence. I don't just write code; I build the brains and the bodies that allow intelligence to scale and interact with the real world through robotics and optimized architecture.",
+        "email": "a.mraied@outlook.com",
+        "cv": "/AbdulmajidMraiedCV.pdf",
+        "socials": [
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/abdulmajid-mraied/",
+                "icon": "linkedin"
+            },
+            {
+                "name": "GitHub",
+                "url": "https://github.com/majid-mraiedd",
+                "icon": "github"
+            },
+            {
+                "name": "WhatsApp",
+                "url": "https://wa.me/218915177136",
+                "icon": "whatsapp"
+            }
+        ]
+    },
+    "hero": {
+        "badge": "Available for hire",
+        "title": "Turning ideas into",
+        "highlight": "digital reality",
+        "description": "I engineer intelligent systems by bridging the gap between hardware architecture, software infrastructure, and artificial intelligence."
+    },
+    "skills": [
+        {
+            "category": "Core Engineering",
+            "items": [
+                "Computer Architecture",
+                "Software Architecture",
+                "Computer Networking",
+                "Algorithms",
+                "Cybersecurity"
+            ]
+        },
+        {
+            "category": "AI & Data Science",
+            "items": [
+                "Artificial Intelligence (AI)",
+                "Data Science",
+                "Python (Programming Language)",
+                "Research Skills"
+            ]
+        },
+        {
+            "category": "Professional Skills",
+            "items": [
+                "English",
+                "Teamwork",
+                "Volunteering",
+                "Microsoft Office"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Saraya Hamra University",
+            "degree": "Computer Engineering",
+            "period": "Current",
+            "description": "Focusing on hardware-software integration, AI, and system architecture."
+        },
+        {
+            "institution": "International Knowledge School (IKS)",
+            "degree": "High School Diploma",
+            "period": "Graduated",
+            "description": "Foundation in science and mathematics."
+        }
+    ],
+    "builds": [
+        {
+            "title": "Saraya Eats",
+            "description": "A high-performance e-commerce platform for Saraya Hamra University. Features student authentication, real-time quantity management, and a categorized digital menu designed with institutional branding.",
+            "tags": [
+                "Node.js",
+                "SQLite",
+                "Software Architecture",
+                "Vanilla JS"
+            ],
+            "image": "/images/saraya-eats.png",
+            "link": "https://saraya-eats.onrender.com"
+        },
+        {
+            "title": "AI Extract",
+            "description": "A web application developed during a hackathon, aimed at assisting blind students with their studies. It uses OCR technology to extract data from PDF files, allowing information to be saved for future study. It also features voice-controlled commands for enhanced accessibility.",
+            "tags": [
+                "Node.js",
+                "Web Speech and OCR API",
+                "Vanilla JS",
+                "Python"
+            ],
+            "image": "/images/AI-Extract.png",
+            "link": "https://aiextract.onrender.com/"
+        },
+        {
+            "title": "Student e-ID",
+            "description": "A digital ID for students that centralizes access to information and documents. This opens possibilities for new features such as secure building entrances, parking management, and more robust campus security systems.",
+            "tags": [
+                "Node.js",
+                "EJS",
+                "Vanilla JS",
+                "CSS"
+            ],
+            "image": "/images/Student-e-ID.png",
+            "link": "https://qrcode-p8jj.onrender.com/"
+        }
+    ],
+    "seminars": [
+        {
+            "speaker": "Dr. Stephen Wu",
+            "speaker_title": "Head of Research Team @ Saraya Hamra University",
+            "topic": "Developing yourself in the Age of AI",
+            "date": "8th Oct 2025"
+        },
+        {
+            "speaker": "Mohamed Okasha",
+            "speaker_title": "AI Lead @ Presto Eat",
+            "topic": "Exploring AI in Libya: Real-World Use Cases and Professional Prospects",
+            "date": "15th Oct 2025"
+        },
+        {
+            "speaker": "Sara Hanish",
+            "speaker_title": "Research Admin Specialist @ Saraya Hamra University",
+            "topic": "How small ideas evolve into big impact",
+            "date": "22nd Oct 2025"
+        },
+        {
+            "speaker": "Ramy Mawal",
+            "speaker_title": "Backend Developer @ Raqmana Group",
+            "topic": "The Reality of Software Engineering and the Job Market in Libya",
+            "date": "29th Oct 2025"
+        },
+        {
+            "speaker": "Abdulmaled Baitulmal",
+            "speaker_title": "Co-Founder @ Quanta.ly",
+            "topic": "Introduction to Quantum Computing",
+            "date": "5th Nov 2025"
+        },
+        {
+            "speaker": "Abdul Muhaimen Abu Abdullah",
+            "speaker_title": "Founding Member of Atome Technology Solutions",
+            "topic": "Importance and Differences between UI & UX",
+            "date": "12th Nov 2025"
+        },
+        {
+            "speaker": "Khaled Gamo",
+            "speaker_title": "Information Security Manager @ Almadar Aljadid",
+            "topic": "Level Up: From Student to Cybersecurity Professional",
+            "date": "18th Nov 2025"
+        },
+        {
+            "speaker": "Rayan Alfendi",
+            "speaker_title": "Mobile App Developer @ Mataa",
+            "topic": "From classroom to code: How to start your journey in software engineering and mobile app development",
+            "date": "26th Nov 2025"
+        },
+        {
+            "speaker": "Dr. Stephen Wu",
+            "speaker_title": "Head of Research Team @ Saraya Hamra University",
+            "topic": "Research done by the Saraya Hamra University Research Team",
+            "date": "10th Dec 2025"
+        },
+        {
+            "speaker": "Muhy Aldeen Lekeemah",
+            "speaker_title": "Industrial Automation Engineer @ Waha Oil Company",
+            "topic": "The importance of Research and Development in the electronics field",
+            "date": "17th Dec 2025"
+        }
+    ],
+    "linkedin_posts": [
+        {
+            "title": "National Programming Milestone",
+            "caption": "Excited to share my results from the Libyan Collegiate Programming Competition (LCPC). 1st in University Qualifiers, 3rd in National Practice, and 18th overall among 50 elite teams.",
+            "date": "Nov 2025",
+            "link": "https://www.linkedin.com/posts/abdulmajid-mraied_officially-celebrating-a-major-milestone-activity-7383954776146849793-BDNF",
+            "images": [
+                "/images/LCPC/1.jpg",
+                "/images/LCPC/2.jpg",
+                "/images/LCPC/3.jpg",
+                "/images/LCPC/4.jpg",
+                "/images/LCPC/5.jpg"
+            ]
+        },
+        {
+            "title": "Innovation in Education Hackathon",
+            "caption": "An incredible week developing a voice-controlled accessibility app for blind and deaf students using TTS and OCR technology. Proudly representing Sabratha University.",
+            "date": "Nov 2025",
+            "link": "https://www.linkedin.com/posts/abdulmajid-mraied_im-still-thrilled-from-an-incredible-week-long-activity-7385404313998905344-gxDG",
+            "images": [
+                "/images/Hackathon/1.jpg",
+                "/images/Hackathon/2.jpg",
+                "/images/Hackathon/3.jpg",
+                "/images/Hackathon/4.jpg"
+            ]
+        }
+    ],
+    "deployment_note": {
+        "button_text": "IMPORTANT!, site not loading?",
+        "title": "A Note on Render Hosting",
+        "description": "I host my full-stack projects on Render's free tier. This means if a project hasn't been visited recently, the server goes into 'sleep mode' to save resources.",
+        "warning_text": "If you see a screen like the one attached, it simply means the server is waking up. Please give it 1–2 minutes to load the initial request.",
+        "image": "/images/render-status.png"
+    }
+}
